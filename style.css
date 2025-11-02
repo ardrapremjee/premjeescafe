@@ -1,0 +1,138 @@
+/* ---------------- Body & Font ---------------- */
+body {
+    background-color: #ffffff; /* white background */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding-top: 100px; /* space for hamburger */
+    color: #333;
+}
+
+
+/* ---------------- Hamburger Icon ---------------- */
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+/* Book Now button top-right corner */
+.book-now-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #2e8b57;  /* bright #1f6b43. */
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    z-index: 1002; /* above hamburger menu */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.book-now-btn:hover {
+    background-color: #1f6b43;
+    transform: scale(1.05);
+}
+
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #2e7d32;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* ---------------- Sidebar ---------------- */
+.sidebar {
+    height: 100%;
+    width: 0; /* initially closed */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2e7d32;
+    overflow-x: hidden;
+    transition: width 0.5s; /* smooth sliding */
+    padding-top: 60px;
+    z-index: 1000;
+}
+
+.sidebar a {
+    padding: 15px 25px;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #4caf50;
+}
+
+/* Disabled link */
+.disabled {
+    pointer-events: none; /* unclickable */
+    opacity: 0.6;         /* faded look */
+    cursor: default;      /* default cursor */
+}
+
+/* ---------------- Page Headings ---------------- */
+h1 {
+    color: #2e8b57; /* green color */
+    font-size: 40px;
+    margin-top: 20px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* ---------------- Buttons ---------------- */
+button, a.contact-btn, .back-btn {
+    background-color: #2e8b57;   /* green color */
+    color: white;                /* white text */
+    border: none;                /* no border */
+    padding: 12px 25px;          /* space inside */
+    font-size: 18px;
+    border-radius: 8px;          /* rounded corners */
+    cursor: pointer;             /* hand cursor */
+    text-decoration: none;       /* removes underline for links */
+    display: inline-block;       /* make link behave like a button */
+}
+
+button:hover, a.contact-btn:hover, .back-btn:hover {
+    background-color: #1f6b43;   /* darker green on hover */
+}
+
+/* ---------------- Lists ---------------- */
+ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+li {
+    margin: 10px 0;
+}
+
+/* ---------------- Content Wrapper ---------------- */
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.contact-info {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 1.6;
+}

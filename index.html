@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>premjeescafe.com</title>
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <!-- Hamburger Menu -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div class="bar"></div>
+    <div class="bar"></div>
+    <div class="bar"></div>
+  </div>
+  <!-- Book Now Button -->
+<a href="https://wa.me/917736252902" target="_blank" class="book-now-btn">Book Now</a>
+
+  <!-- Sidebar Menu -->
+  <div id="sidebar" class="sidebar">
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+    <h1>Premjee's Café</h1>
+
+    <p>Where Coffee Meets Calm</p>
+    
+
+    <a href="menu.html" class="contact-btn">Menu</a>
+
+
+    <script>
+        function toggleMenu() {
+          const sidebar = document.getElementById("sidebar");
+          if (sidebar.style.width === "250px") {
+            sidebar.style.width = "0";
+          } else {
+            sidebar.style.width = "250px";
+          }
+        }
+      
+        // Close menu when mouse leaves sidebar
+    const sidebar = document.getElementById("sidebar");
+    sidebar.addEventListener('mouseleave', function() {
+      sidebar.style.width = "0";
+      sidebar.classList.remove('open');
+    });
+
+        document.addEventListener('DOMContentLoaded', function() {
+  const sidebarLinks = document.querySelectorAll('.sidebar a');
+  const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+
+  sidebarLinks.forEach(link => {
+    if (link.getAttribute('href') === currentPage) {
+      link.classList.add('disabled');
+    }
+  });
+});
+  
+      </script>
+      
+
+
+
+    
+  </body>
+</html>

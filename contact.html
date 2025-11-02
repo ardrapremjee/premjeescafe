@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - Café Delight</title>
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<!-- Hamburger Menu -->
+<div class="hamburger" onclick="toggleMenu()">
+  <div class="bar"></div>
+  <div class="bar"></div>
+  <div class="bar"></div>
+</div>
+
+<!-- Sidebar Menu -->
+<div id="sidebar" class="sidebar">
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- Page content -->
+<h1>Contact Us</h1>
+<div class="contact-info">
+  <p><strong>Phone:</strong> +91 7736252902</p>
+  <p><strong>Email:</strong> info@premjeescafe.com</p>
+  <p><strong>Address:</strong> Kilithattumukku, Varkala, Thiruvananthapuram</p>
+  <p><strong>Opening Hours:</strong> Mon-Sun: 8:00 AM – 10:00 PM</p>
+  <p><strong>Follow us on:</strong> Instagram | Facebook | Twitter</p>
+</div>
+
+<script>
+    function toggleMenu() {
+      const sidebar = document.getElementById("sidebar");
+      if (sidebar.style.width === "250px") {
+        sidebar.style.width = "0";
+        sidebar.classList.remove('open');
+      } else {
+        sidebar.style.width = "250px";
+        sidebar.classList.add('open');
+      }
+    }
+    
+    // Close menu when mouse leaves sidebar
+    const sidebar = document.getElementById("sidebar");
+    sidebar.addEventListener('mouseleave', function() {
+      sidebar.style.width = "0";
+      sidebar.classList.remove('open');
+    });
+    
+    // Disable current page links
+    document.addEventListener('DOMContentLoaded', function() {
+      const sidebarLinks = document.querySelectorAll('.sidebar a');
+      const currentPage = window.location.pathname.split("/").pop() || 'index.html';
+    
+      sidebarLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPage) {
+          link.classList.add('disabled');
+        }
+      });
+    });
+    </script>
+    
+
+</body>
+</html>
+
